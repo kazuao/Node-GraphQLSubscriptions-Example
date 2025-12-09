@@ -1,0 +1,16 @@
+{
+  "name": "graphql-ws-stub",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^10.0.0",
+    "graphql": "^16.9.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^6.0.5",
+    "ws": "^8.18.0"
+  }
+}
