@@ -1,7 +1,7 @@
 import http from 'http';
 import { WebSocketServer } from 'ws';
 import { execute, subscribe } from 'graphql';
-import { useServer } from 'graphql-ws/lib/use/ws';
+import { useServer } from 'graphql-ws/use/ws';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { PubSub } from 'graphql-subscriptions';
 
@@ -65,6 +65,8 @@ const resolvers = {
   },
   Mutation: {
     sendMessage: async (_, { text }) => {
+      // 受信したメッセージ内容をログ出力
+      console.log('[sendMessage] received:', text);
       const message = {
         id: String(idCounter++),
         text,

@@ -45,7 +45,7 @@ GraphQL over WebSocket + Subscriptions を試すための Node.js 製スタブ�
 import http from 'http';
 import { WebSocketServer } from 'ws';
 import { execute, subscribe } from 'graphql';
-import { useServer } from 'graphql-ws/lib/use/ws';
+import { useServer } from 'graphql-ws/use/ws';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { PubSub } from 'graphql-subscriptions';
 
@@ -281,8 +281,11 @@ mutation SendMessageSample {
 
 ## 5. セットアップ & 起動（pnpm）
 
+`packageManager` に合わせて pnpm のバージョンを固定してから依存を入れます。
+
 ```bash
-pnpm install
+corepack use pnpm@10.25.0
+pnpm install --frozen-lockfile
 pnpm start
 # => http://localhost:4000 / ws://localhost:4000/graphql で起動
 ```
